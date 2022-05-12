@@ -1,14 +1,16 @@
-## Esercizio 10
-A volte i supereroi devono saper mantenere dei segreti. In questo decimo esercizio potenzieremo le funzionalità della nostra todo list andando a creare, attraverso una Pipe, un semplice algoritmo di cifratura che dato un testo sostituisce ciascun carattere con il carattere successivo
+## Esercizio 11
+È giunto il momento di diventare noi stessi dei supereroi! In questo esercizio andremo a creare un form dove, una volta compilato, verranno mostrati i dati inseriti all'interno del componente **HeroCardComponent**. Il form sarà formato dai seguenti campi:
 
-Esempio:
-* La parola **Angular** diventa **Bohvmbs**
-* La parola **Salvare** diventa **Tbmzbsf**
+* Nome
+* Url Immagine
+* Lista Abilità
 
-Per questo esercizio occorre eseguire le seguenti operazioni:
-* Creare la Pipe **NextCharEncryptPipe** che dato un testo sostituisce ciascun carattere con il carattere successivo
-* Applicare la Pipe precedentemente creata al titolo e alla descrizione di ciascun todo
-* Aggiungere al componente **TodoPageComponent** una checkbox che, una volta cliccata, attiva / disattiva la Pipe **NextCharEncryptPipe**
+Per questo esercizio occorre creare:
+
+* Una pagina che mostra in alto la card **HeroCardComponent** con i dati iniziali vuoti
+* In basso un form che richiede all'utente di immettere: nome, url immagine, lista abilità
+* Pulsante azione che, una volta cliccato, recupera i dati del form e li passa al componente **HeroCardComponent** per la visualizzazione
+* Infine aggiungere la rotta `/new-hero` che rimanda alla pagina contenente il form
 
 # ProjectAssignmentExercize
 
