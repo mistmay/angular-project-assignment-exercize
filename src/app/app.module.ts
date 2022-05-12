@@ -9,7 +9,8 @@ import { HeroPageComponent } from './views/hero-page.component';
 import { TodoPageComponent } from './views/todo-page.component';
 import { TodoListComponent } from './components/todo-list.component';
 import { TodoListItemComponent } from './components/todo-list-item.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TodoFormComponent } from './components/todo-form.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,15 @@ import { FormsModule } from '@angular/forms';
     HeroPageComponent,
     TodoPageComponent,
     TodoListComponent,
-    TodoListItemComponent
+    TodoListItemComponent,
+    TodoFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

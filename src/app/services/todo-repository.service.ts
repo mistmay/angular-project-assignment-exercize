@@ -22,8 +22,8 @@ export class TodoRepositoryService {
     return this.http.post<Todo>('http://localhost:3000/todos', todo);
   }
 
-  update(id: number, todo: Todo): Observable<Todo> {
-    return this.http.put<Todo>(`http://localhost:3000/todos/${id}`, todo);
+  update(todo: Todo): Observable<Todo> {
+    return this.http.put<Todo>(`http://localhost:3000/todos/${todo.id}`, todo);
   }
 
   deleteById(id: number): Observable<Todo> {
