@@ -1,17 +1,18 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Todo } from '../models/todo';
-import { TodoRepositoryService } from '../services/todo-repository.service';
+import { TodoFacadeService } from '../services/todo-facade.service';
 
 @Component({
   selector: 'app-todo-page',
   template: `
-    <ng-container *ngIf="todoList; else loading">
+    <ng-container *ngIf="todoList && todoList.length > 0; else loading">
       <app-todo-list [todoList]="todoList" (updateTodo)="updateTodo($event)" (deleteTodo)="deleteTodo($event)"></app-todo-list>
       <app-todo-form [length]="todoList.length" (newTodo)="addTodo($event)"></app-todo-form>
+      <a class="my-5 d-inline-block text-center w-100 btn btn-primary" routerLink="hero">Go to Hero Page</a>
     </ng-container>
     <ng-template #loading>
-      <p>Loading</p>
+      <p>{{loadingMessage}}</p>
     </ng-template>
   `,
   styles: [
@@ -19,54 +20,38 @@ import { TodoRepositoryService } from '../services/todo-repository.service';
 })
 export class TodoPageComponent implements OnInit, OnDestroy {
   todoList!: Todo[];
-  subscriptions: Subscription[] = [];
+  subscription!: Subscription;
+  loadingMessage: string = 'Loading';
 
-  constructor(private api: TodoRepositoryService) { }
+  constructor(private listService: TodoFacadeService) { }
 
   ngOnInit(): void {
-    this.getTodo();
+    this.listService.updateList();
+    this.subscribe();
   }
 
-  getTodo(): void {
-    this.subscriptions.push(
-      this.api.getAll()
-        .subscribe((res: Todo[]) => {
-          this.todoList = res;
-        })
-    );
+  subscribe(): void {
+    this.subscription = this.listService.getList()
+      .subscribe((res: Todo[]) => {
+        this.todoList = res;
+        this.loadingMessage = 'No Todo in List. Please Add One';
+      });
   }
 
   updateTodo(todo: Todo): void {
-    this.subscriptions.push(
-      this.api.update(todo)
-        .subscribe((res: Todo) => {
-          this.getTodo();
-        })
-    );
+    this.listService.updateTodo(todo);
   }
 
   addTodo(todo: Todo): void {
-    this.subscriptions.push(
-      this.api.create(todo)
-        .subscribe((res: Todo) => {
-          this.getTodo();
-        })
-    );
+    this.listService.addTodo(todo);
   }
 
   deleteTodo(id: number): void {
-    this.subscriptions.push(
-      this.api.deleteById(id)
-        .subscribe((res: Todo) => {
-          this.getTodo();
-        })
-    );
+    this.listService.deleteTodo(id);
   }
 
   ngOnDestroy(): void {
-    this.subscriptions.forEach((subscription: Subscription) => {
-      subscription.unsubscribe();
-    });
+    this.subscription.unsubscribe();
   }
 
 }
