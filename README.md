@@ -1,3 +1,11 @@
+## Esercizio 1
+In questo primo esercizio andremo a creare all'interno del componente **AppComponent** una card che conterrà le informazioni del nostro eroe preferito.
+La card sarà composta dalle seguenti informazioni:
+
+* Un titolo con il nome dell'eroe
+* Un immagine dell'eroe
+* La lista delle abilità e dei super poteri che l'eroe possiede
+
 # ProjectAssignmentExercize
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
