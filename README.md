@@ -1,5 +1,8 @@
-## Esercizio 4
-In questo quarto esercizio andremo a riorganizzare il codice scritto precedentemente attraverso la creazione di un **servizio**. Lo scopo dell'esercizio è quello di alleggerire il componente **HeroCardComponent** spostando la logica applicativa all'interno di una classe servizio. Il servizio  in questione (**HeroPhraseGeneratorService**), si occuperà di generare una frase random da far pronunciare all'eroe da una lista predefinita di frasi.
+## Esercizio 5
+In questo quinto esercizio introdurremo alcune modifiche all'UI di **HeroCardComponent** utilizzando lo **Style Bindings**:
+
+* Al passaggio del mouse sopra il nome dell'eroe, quest'ultimo deve eseguire un'animazione con effetto "ZoomIn" tramite una classe CSS
+* Al passaggio del mouse sopra una delle abilità, quest'ultima deve essere evidenziata in giallo.
 
 # ProjectAssignmentExercize
 
