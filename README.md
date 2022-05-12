@@ -1,8 +1,27 @@
-## Esercizio 5
-In questo quinto esercizio introdurremo alcune modifiche all'UI di **HeroCardComponent** utilizzando lo **Style Bindings**:
+## Esercizio 6
+Ogni buon supereroe ha sempre con sè una lista dei compiti da svolgere durante la giornata. Con questo sesto esercizio, infatti, inizieremo la costruzione di una todo list per consentire all'eroe di tenere traccia delle azioni da svolgere. Per la costruzione della todo list verranno fornite delle API da richiamare per eseguire delle operazioni CRUD sulla lista dei todo. In questa prima parte dell'esercizio occorrerà svolgere le seguenti operazioni:
 
-* Al passaggio del mouse sopra il nome dell'eroe, quest'ultimo deve eseguire un'animazione con effetto "ZoomIn" tramite una classe CSS
-* Al passaggio del mouse sopra una delle abilità, quest'ultima deve essere evidenziata in giallo.
+* Creare il tipo **Todo** con le seguenti proprietà:
+  * id (**number**)
+  * title (**string**)
+  * description (**string**)
+  * done (**boolean**)
+  * createdAt (**number**)
+* Creare il servizio **TodoRepositoryService** per le operazioni CRUD sui todo
+* Il servizio **TodoRepositoryService** dovrà contenere i seguenti metodi:
+  * getAll() - per recuperare l'intera lista dei todo
+  * getById(id: number) - per recuperare un todo tramite id
+  * create(todo: Todo) - per creare un nuovo todo
+  * update(todo: Todo) - per aggiornare i dati di un todo
+  * deleteById(id: number) - per cancellare un todo tramite id
+* Ogni metodo di **TodoRepositoryService** dovrà richiamare un endpoint specifico:
+  * getAll() - http://localhost:3000/todos [GET]
+  * getById(id: number) - http://localhost:3000/todos/:id [GET]
+  * create(todo: Todo) - http://localhost:3000/todos [POST]
+  * update(todo: Todo) - http://localhost:3000/todos/:id [PUT]
+  * deleteById(id: number) - http://localhost:3000/todos/:id [DELETE]
+
+**ATTENZIONE:** Prima di utilizzare le API è necessario avviare il JSON Server lanciando nella root di progetto il seguente comando: `npm run json:server`
 
 # ProjectAssignmentExercize
 
