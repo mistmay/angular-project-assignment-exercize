@@ -18,9 +18,7 @@ import { TodoFacadeService } from '../services/todo-facade.service';
     <ng-template #loading>
       <p>{{loadingMessage}}</p>
     </ng-template>
-  `,
-  styles: [
-  ]
+  `
 })
 export class TodoPageComponent implements OnInit, OnDestroy {
   todoList!: Todo[];

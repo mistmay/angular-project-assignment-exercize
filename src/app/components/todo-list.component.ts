@@ -13,9 +13,7 @@ import { Todo } from '../models/todo';
         [isEncrypted]="isEncrypted">
       </app-todo-list-item>
     </div>
-  `,
-  styles: [
-  ]
+  `
 })
 export class TodoListComponent implements OnInit {
   @Input() todoList!: Todo[];

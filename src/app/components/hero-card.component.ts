@@ -15,8 +15,8 @@ import { HeroPhraseGeneratorService } from '../services/hero-phrase-generator.se
             <p class="card-text" appHoverLi>{{ability}}</p>
           </li>
         </ul>
-        <button type="button" class="btn btn-primary w-100 mt-3" (click)="randomPhrase()">Listen to me!</button>
-        <button type="button" class="btn btn-primary w-100 mt-2" (click)="goToTodo.emit(hero.id)">Go to Todo Page</button>
+        <button type="button" class="btn btn-primary w-100 mt-3" (click)="randomPhrase()" *ngIf="showBtn">Listen to me!</button>
+        <button type="button" class="btn btn-primary w-100 mt-2" (click)="goToTodo.emit(hero.id)" *ngIf="showBtn">Go to Todo Page</button>
       </div>
     </div>
   `,
@@ -33,6 +33,7 @@ import { HeroPhraseGeneratorService } from '../services/hero-phrase-generator.se
 })
 export class HeroCardComponent implements OnInit {
   @Input() hero!: Hero;
+  @Input() showBtn!: boolean;
   @Output() heroTalks: EventEmitter<string> = new EventEmitter<string>();
   @Output() goToTodo: EventEmitter<number> = new EventEmitter<number>();
 

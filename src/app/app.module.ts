@@ -14,6 +14,7 @@ import { TodoFormComponent } from './components/todo-form.component';
 import { ZoomInDirective } from './directives/zoom-in.directive';
 import { HoverLiDirective } from './directives/hover-li.directive';
 import { NextCharEncryptPipe } from './pipes/next-char-encrypt.pipe';
+import { NewHeroComponent } from './views/new-hero.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NextCharEncryptPipe } from './pipes/next-char-encrypt.pipe';
     TodoFormComponent,
     ZoomInDirective,
     HoverLiDirective,
-    NextCharEncryptPipe
+    NextCharEncryptPipe,
+    NewHeroComponent
   ],
   imports: [
     BrowserModule,

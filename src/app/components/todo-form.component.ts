@@ -23,9 +23,7 @@ import { Todo } from '../models/todo';
         <button type="submit" class="btn btn-primary w-100 rounded-3" [disabled]="form.invalid">Add</button>
       </form>
     </div>
-  `,
-  styles: [
-  ]
+  `
 })
 export class TodoFormComponent implements OnInit {
   @Output() newTodo: EventEmitter<Todo> = new EventEmitter<Todo>();
