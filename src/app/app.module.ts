@@ -5,16 +5,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroCardComponent } from './components/hero-card.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HeroPageComponent } from './views/hero-page.component';
+import { TodoPageComponent } from './views/todo-page.component';
+import { TodoListComponent } from './components/todo-list.component';
+import { TodoListItemComponent } from './components/todo-list-item.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroCardComponent
+    HeroCardComponent,
+    HeroPageComponent,
+    TodoPageComponent,
+    TodoListComponent,
+    TodoListItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
