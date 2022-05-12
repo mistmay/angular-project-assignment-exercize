@@ -1,9 +1,14 @@
-## Esercizio 9
-In questo esercizio eseguiremo del refactoring per migliorare la leggibilità e la riusabilità di alcune funzionalità sviluppate:
+## Esercizio 10
+A volte i supereroi devono saper mantenere dei segreti. In questo decimo esercizio potenzieremo le funzionalità della nostra todo list andando a creare, attraverso una Pipe, un semplice algoritmo di cifratura che dato un testo sostituisce ciascun carattere con il carattere successivo
 
-* Il componente **TodoPageComponent** contiene troppa logica, pertanto possiamo rifattorizzarlo spostando la sua logica all'interno del servizio **TodoFacadeService**, il quale si occuperà di richiamare ed effettuare la sottoscrizione ai metodi di **TodoRepositoryService** e di restituire la lista dei todo aggiornata
-* Spostare all'interno di una direttiva la funzionalità che si occupa di effettuare lo "ZoomIn" del nome dell'eroe presente nel componente **HeroCardComponent**
-* Spostare all'interno di un'altra direttiva la funzionalità che si occupa di effettuare l'evidenziazione delle abilità del supereroe presente nel componente **HeroCardComponent**
+Esempio:
+* La parola **Angular** diventa **Bohvmbs**
+* La parola **Salvare** diventa **Tbmzbsf**
+
+Per questo esercizio occorre eseguire le seguenti operazioni:
+* Creare la Pipe **NextCharEncryptPipe** che dato un testo sostituisce ciascun carattere con il carattere successivo
+* Applicare la Pipe precedentemente creata al titolo e alla descrizione di ciascun todo
+* Aggiungere al componente **TodoPageComponent** una checkbox che, una volta cliccata, attiva / disattiva la Pipe **NextCharEncryptPipe**
 
 # ProjectAssignmentExercize
 
