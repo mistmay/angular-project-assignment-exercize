@@ -1,9 +1,9 @@
-## Esercizio 8
-In questo ottavo esercizio proseguiremo con lo sviluppo della todo list andando a implementare le azioni CRUD all'interno della nostra interfaccia grafica:
+## Esercizio 9
+In questo esercizio eseguiremo del refactoring per migliorare la leggibilità e la riusabilità di alcune funzionalità sviluppate:
 
-* Creare il componente **TodoFormComponent**, il quale conterrà un campo per il titolo, uno per la descrizione e un pulsante che, una volta cliccato, consentirà la creazione di un nuovo todo. Questo componente dovrà essere innestato all'interno di **TodoPageComponent**, il quale riceverà l'evento del submit del form ed eseguirà la chiamata al metodo **create** del servizio **TodoRepositoryService**
-* Al click della checkbox dovrà partire un evento custom al componente _parent_, il quale si occuperà di effettuare la chiamata al repository per aggiornare il campo _done_ del todo
-* Aggiungere alla fine del titolo di ciascun todo un pulsante con l'icona del cestino che, una volta cliccato, genererà l'evento custom al componente _parent_ per la cancellazione del todo
+* Il componente **TodoPageComponent** contiene troppa logica, pertanto possiamo rifattorizzarlo spostando la sua logica all'interno del servizio **TodoFacadeService**, il quale si occuperà di richiamare ed effettuare la sottoscrizione ai metodi di **TodoRepositoryService** e di restituire la lista dei todo aggiornata
+* Spostare all'interno di una direttiva la funzionalità che si occupa di effettuare lo "ZoomIn" del nome dell'eroe presente nel componente **HeroCardComponent**
+* Spostare all'interno di un'altra direttiva la funzionalità che si occupa di effettuare l'evidenziazione delle abilità del supereroe presente nel componente **HeroCardComponent**
 
 # ProjectAssignmentExercize
 
