@@ -7,12 +7,12 @@ import { Todo } from '../models/todo';
     <div class="bg-white rounded-3 w-100 py-4 px-3 d-flex flex-column gap-3 shadow">
       <div class="d-flex align-items-center gap-2">
         <input type="checkbox" name="done" [(ngModel)]="todo.done" (change)="updateTodo.emit(todo)">
-        <h3 class="fs-4 fw-bold">{{todo.title}}</h3>
+        <h3 class="fs-4 fw-bold">{{todo.title | nextCharEncrypt:isEncrypted}}</h3>
         <button type="button" class="btn btn-danger d-flex justify-content-center align-items-center" (click)="deleteTodo.emit(todo.id)">
           <img src="../../assets/svg/trash.svg">
         </button>
       </div>
-      <p>{{todo.description}}</p>
+      <p>{{todo.description | nextCharEncrypt:isEncrypted}}</p>
       <small>{{todo.createdAt | date:'dd/MM/yyyy hh:mm'}}</small>
     </div>
   `,
@@ -24,6 +24,7 @@ import { Todo } from '../models/todo';
 })
 export class TodoListItemComponent implements OnInit {
   @Input() todo!: Todo;
+  @Input() isEncrypted!: boolean;
   @Output() updateTodo: EventEmitter<Todo> = new EventEmitter<Todo>();
   @Output() deleteTodo: EventEmitter<number> = new EventEmitter<number>();
 

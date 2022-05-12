@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TodoFormComponent } from './components/todo-form.component';
 import { ZoomInDirective } from './directives/zoom-in.directive';
 import { HoverLiDirective } from './directives/hover-li.directive';
+import { NextCharEncryptPipe } from './pipes/next-char-encrypt.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HoverLiDirective } from './directives/hover-li.directive';
     TodoListItemComponent,
     TodoFormComponent,
     ZoomInDirective,
-    HoverLiDirective
+    HoverLiDirective,
+    NextCharEncryptPipe
   ],
   imports: [
     BrowserModule,

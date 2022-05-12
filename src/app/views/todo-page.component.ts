@@ -7,7 +7,11 @@ import { TodoFacadeService } from '../services/todo-facade.service';
   selector: 'app-todo-page',
   template: `
     <ng-container *ngIf="todoList && todoList.length > 0; else loading">
-      <app-todo-list [todoList]="todoList" (updateTodo)="updateTodo($event)" (deleteTodo)="deleteTodo($event)"></app-todo-list>
+      <div class="d-flex align-items-center gap-3 mb-4 px-3">
+        <label for="encrypt">Encryption activated:</label>
+        <input type="checkbox" id="encrypt" name="encrypt" [(ngModel)]="isEncrypted">
+      </div>
+      <app-todo-list [todoList]="todoList" (updateTodo)="updateTodo($event)" (deleteTodo)="deleteTodo($event)" [isEncrypted]="isEncrypted"></app-todo-list>
       <app-todo-form [length]="todoList.length" (newTodo)="addTodo($event)"></app-todo-form>
       <a class="my-5 d-inline-block text-center w-100 btn btn-primary" routerLink="hero">Go to Hero Page</a>
     </ng-container>
@@ -22,6 +26,7 @@ export class TodoPageComponent implements OnInit, OnDestroy {
   todoList!: Todo[];
   subscription!: Subscription;
   loadingMessage: string = 'Loading';
+  isEncrypted: boolean = true;
 
   constructor(private listService: TodoFacadeService) { }
 
