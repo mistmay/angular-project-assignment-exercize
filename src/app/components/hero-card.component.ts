@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Hero } from '../models/hero';
 
 @Component({
@@ -14,6 +14,7 @@ import { Hero } from '../models/hero';
           <p class="card-text">{{ability}}</p>
         </li>
       </ul>
+      <button type="button" class="btn btn-primary w-100 mt-3" (click)="randomPhrase()">Listen to me!</button>
     </div>
   </div>
   `,
@@ -27,10 +28,24 @@ import { Hero } from '../models/hero';
 })
 export class HeroCardComponent implements OnInit {
   @Input() hero!: Hero;
+  @Output() heroTalks: EventEmitter<string> = new EventEmitter<string>();
+  phrases: string[] = [
+    'I will catch all the criminals',
+    'I will protect you',
+    'I am stronger then you',
+    'You are safe because of me',
+    'You will never know about my identity',
+    'I am cool'
+  ]
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  randomPhrase(): void {
+    const random: number = Math.floor(Math.random() * (this.phrases.length));
+    this.heroTalks.emit(this.phrases[random]);
   }
 
 }

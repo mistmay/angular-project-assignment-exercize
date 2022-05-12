@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'project-assignment-exercize';
+  showAlert(phrase: string): void {
+    alert(phrase);
+  }
 }
