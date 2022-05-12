@@ -1,5 +1,5 @@
-## Esercizio 3
-In questo terzo esercizio affronteremo come avviene la comunicazione tra un componente _child_ e un componente _parent_. All'interno del componente **HeroCardComponent** si andrà a definire un array con le frasi tipiche pronunciate dai supereroi. Successivamente, al click della card, andremo a recuperare tramite una funzione una frase random dall'array e la passeremo al componente _parent_ **AppComponent** tramite una proprietà di output. Infine, tramite l'evento custom, mostreremo la frase a schermo attraverso una semplice funzione di alert.
+## Esercizio 4
+In questo quarto esercizio andremo a riorganizzare il codice scritto precedentemente attraverso la creazione di un **servizio**. Lo scopo dell'esercizio è quello di alleggerire il componente **HeroCardComponent** spostando la logica applicativa all'interno di una classe servizio. Il servizio  in questione (**HeroPhraseGeneratorService**), si occuperà di generare una frase random da far pronunciare all'eroe da una lista predefinita di frasi.
 
 # ProjectAssignmentExercize
 
