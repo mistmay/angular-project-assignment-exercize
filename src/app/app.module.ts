@@ -11,6 +11,8 @@ import { TodoListComponent } from './components/todo-list.component';
 import { TodoListItemComponent } from './components/todo-list-item.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TodoFormComponent } from './components/todo-form.component';
+import { ZoomInDirective } from './directives/zoom-in.directive';
+import { HoverLiDirective } from './directives/hover-li.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { TodoFormComponent } from './components/todo-form.component';
     TodoPageComponent,
     TodoListComponent,
     TodoListItemComponent,
-    TodoFormComponent
+    TodoFormComponent,
+    ZoomInDirective,
+    HoverLiDirective
   ],
   imports: [
     BrowserModule,
