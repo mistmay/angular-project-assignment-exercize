@@ -1,19 +1,9 @@
-## Esercizio 7
-In questo esercizio proseguiremo con lo sviluppo della nostra todo list attraverso la realizzazione di tre componenti: **TodoPageComponent**, **TodoListComponent** e **TodoListItemComponent**.
+## Esercizio 8
+In questo ottavo esercizio proseguiremo con lo sviluppo della todo list andando a implementare le azioni CRUD all'interno della nostra interfaccia grafica:
 
-Le operazioni da eseguire sono le seguenti:
-
-* Creare il componente **TodoPageComponent**, il quale si occuperà di mostrare la lista e il form per l'aggiunta dei nuovi todo
-* Creare il componente **TodoListComponent**, il quale accetterà come proprietà in input un array di **Todo** e li mostrerà a schermo sotto forma di elenco
-* Creare il componente **TodoListItemComponent** per il singolo todo dell'elenco. Questo componente accetterà in input un **Todo** e lo mostrerà a schermo sotto forma di card. La card dovrà contenere le seguenti informazioni:
-  * Titolo
-  * Descrizione
-  * Data creazione
-  * Checkbox che consentirà di flaggare il todo una volta completato
-* Creare una nuova rotta per accedere alla pagina contenente la lista dei todo. Per aggiungere una nuova rotta occorrerà utilizzare il modulo **RouterModule** di Angular
-* Rifattorizzare il componente **AppComponent** affinché utilizzi la direttiva **RouterOutlet** per consentire la navigazione dei componenti. Di conseguenza occorrerà creare il componente **HeroPageComponent** e la relativa rotta per consentire la navigazione tra la lista dei todo e la card dell'eroe
-* Infine, aggiungere un pulsante all'interno del componente **HeroCardComponent** che, una volta cliccato, dovrà indirizzare l'utente alla pagina contenente la lista dei todo.
-**N.B:** il componente **HeroCardComponent** è **Stateless**, pertanto bisognerà gestire il reindirizzamento dell'utente tramite un evento custom
+* Creare il componente **TodoFormComponent**, il quale conterrà un campo per il titolo, uno per la descrizione e un pulsante che, una volta cliccato, consentirà la creazione di un nuovo todo. Questo componente dovrà essere innestato all'interno di **TodoPageComponent**, il quale riceverà l'evento del submit del form ed eseguirà la chiamata al metodo **create** del servizio **TodoRepositoryService**
+* Al click della checkbox dovrà partire un evento custom al componente _parent_, il quale si occuperà di effettuare la chiamata al repository per aggiornare il campo _done_ del todo
+* Aggiungere alla fine del titolo di ciascun todo un pulsante con l'icona del cestino che, una volta cliccato, genererà l'evento custom al componente _parent_ per la cancellazione del todo
 
 # ProjectAssignmentExercize
 
