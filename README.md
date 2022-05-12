@@ -1,27 +1,19 @@
-## Esercizio 6
-Ogni buon supereroe ha sempre con sè una lista dei compiti da svolgere durante la giornata. Con questo sesto esercizio, infatti, inizieremo la costruzione di una todo list per consentire all'eroe di tenere traccia delle azioni da svolgere. Per la costruzione della todo list verranno fornite delle API da richiamare per eseguire delle operazioni CRUD sulla lista dei todo. In questa prima parte dell'esercizio occorrerà svolgere le seguenti operazioni:
+## Esercizio 7
+In questo esercizio proseguiremo con lo sviluppo della nostra todo list attraverso la realizzazione di tre componenti: **TodoPageComponent**, **TodoListComponent** e **TodoListItemComponent**.
 
-* Creare il tipo **Todo** con le seguenti proprietà:
-  * id (**number**)
-  * title (**string**)
-  * description (**string**)
-  * done (**boolean**)
-  * createdAt (**number**)
-* Creare il servizio **TodoRepositoryService** per le operazioni CRUD sui todo
-* Il servizio **TodoRepositoryService** dovrà contenere i seguenti metodi:
-  * getAll() - per recuperare l'intera lista dei todo
-  * getById(id: number) - per recuperare un todo tramite id
-  * create(todo: Todo) - per creare un nuovo todo
-  * update(todo: Todo) - per aggiornare i dati di un todo
-  * deleteById(id: number) - per cancellare un todo tramite id
-* Ogni metodo di **TodoRepositoryService** dovrà richiamare un endpoint specifico:
-  * getAll() - http://localhost:3000/todos [GET]
-  * getById(id: number) - http://localhost:3000/todos/:id [GET]
-  * create(todo: Todo) - http://localhost:3000/todos [POST]
-  * update(todo: Todo) - http://localhost:3000/todos/:id [PUT]
-  * deleteById(id: number) - http://localhost:3000/todos/:id [DELETE]
+Le operazioni da eseguire sono le seguenti:
 
-**ATTENZIONE:** Prima di utilizzare le API è necessario avviare il JSON Server lanciando nella root di progetto il seguente comando: `npm run json:server`
+* Creare il componente **TodoPageComponent**, il quale si occuperà di mostrare la lista e il form per l'aggiunta dei nuovi todo
+* Creare il componente **TodoListComponent**, il quale accetterà come proprietà in input un array di **Todo** e li mostrerà a schermo sotto forma di elenco
+* Creare il componente **TodoListItemComponent** per il singolo todo dell'elenco. Questo componente accetterà in input un **Todo** e lo mostrerà a schermo sotto forma di card. La card dovrà contenere le seguenti informazioni:
+  * Titolo
+  * Descrizione
+  * Data creazione
+  * Checkbox che consentirà di flaggare il todo una volta completato
+* Creare una nuova rotta per accedere alla pagina contenente la lista dei todo. Per aggiungere una nuova rotta occorrerà utilizzare il modulo **RouterModule** di Angular
+* Rifattorizzare il componente **AppComponent** affinché utilizzi la direttiva **RouterOutlet** per consentire la navigazione dei componenti. Di conseguenza occorrerà creare il componente **HeroPageComponent** e la relativa rotta per consentire la navigazione tra la lista dei todo e la card dell'eroe
+* Infine, aggiungere un pulsante all'interno del componente **HeroCardComponent** che, una volta cliccato, dovrà indirizzare l'utente alla pagina contenente la lista dei todo.
+**N.B:** il componente **HeroCardComponent** è **Stateless**, pertanto bisognerà gestire il reindirizzamento dell'utente tramite un evento custom
 
 # ProjectAssignmentExercize
 
